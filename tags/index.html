@@ -81,7 +81,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="tags">
-<meta property="og:url" content="http://wife.yucc.me/tags/index.html">
+<meta property="og:url" content="https://wife.yucc.me/tags/index.html">
 <meta property="og:site_name" content="可爱滴小贝子">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-04-26T14:58:10.903Z">
@@ -96,7 +96,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -116,7 +116,7 @@
 
 
 
-  <link rel="canonical" href="http://wife.yucc.me/tags/"/>
+  <link rel="canonical" href="https://wife.yucc.me/tags/"/>
 
 
 
@@ -284,6 +284,9 @@
           
 
   
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -300,6 +303,8 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
     
     <div class="sidebar-inner">
 
@@ -599,6 +604,28 @@ siteTime()
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'VPw7yAMOPjyUMfQYgbnzpDSV-gzGzoHsz# your leancloud application appid',
+        appKey: 'rl844pRT9fIdBjnsgqb3I3am',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
